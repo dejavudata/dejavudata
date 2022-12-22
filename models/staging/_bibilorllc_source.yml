@@ -1,0 +1,42 @@
+version: 2
+
+sources: 
+  - name: bibilorllc
+    description: This is raw data
+    database: first-dejavu
+    tables: 
+      - name: 2016_begin_inventory
+        description: This table shows information about inventory on all stores at the first date of month.
+        columns:
+          - name: InventoryId
+            tests:
+              - unique
+              - not_null
+      - name: 201601_sales
+        discription: This table shows all sales on all stores.
+        columns: 
+          - name: SaleId
+            tests: 
+              - unique
+              - not_null
+      - name: 201601_purchase_order
+        discription: This table shows all purchases order from all stores.
+        columns:
+          - name: PurchaseId
+            tests:
+              - unique
+              - not_null
+      - name: 201601_received_purchases
+        discription: This table shows all the products shipped to all stores.
+        columns: 
+          - name: ReceiveId
+            tests:
+              - unique
+              - not_null
+      - name: 201601_invoice_purchases
+        discription: This table shows all invoices of the purchases.
+        columns: 
+          - name: PONumber
+            tests:
+              - unique
+              - not_null
